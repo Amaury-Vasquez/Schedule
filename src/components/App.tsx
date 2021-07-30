@@ -1,13 +1,17 @@
 import { Fragment } from "react";
 import { GlobalStyles } from "../styles/GlobalStyles";
-import { Sample } from "./Sample";
+import { Schedule } from "./Schedule";
+
+import Context from "../context/index";
+import { useInitialState } from "../hooks/useInitialState";
 
 const App = () => {
+  const initialState = useInitialState();
   return (
-    <Fragment>
+    <Context.Provider value={initialState}>
       <GlobalStyles />
-      <Sample />
-    </Fragment>
+      <Schedule />
+    </Context.Provider>
   );
 };
 
