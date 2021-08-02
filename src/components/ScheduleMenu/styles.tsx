@@ -16,4 +16,11 @@ export const Menu = styled.div`
     border-radius: var(--radius);
     background: var(--white);
   }
+
+  @media screen and (max-width: 500px) {
+    height: 30px;
+    & > div {
+      width: 100px;
+    }
+  }
 `;

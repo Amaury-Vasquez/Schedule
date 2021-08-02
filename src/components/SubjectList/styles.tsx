@@ -9,6 +9,11 @@ export const Item = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--gray);
+  padding: 15px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const List = styled.div`
@@ -25,13 +30,9 @@ export const List = styled.div`
 `;
 
 export const Subject = styled.div`
-  /* height: 100%; */
-  border-bottom: 1px solid var(--gray);
-  /* width: 100%; */
   height: auto;
   width: auto;
   font-size: 16px;
-  padding: 15px;
   & > h4,
   h5 {
     color: var(--gray-text);

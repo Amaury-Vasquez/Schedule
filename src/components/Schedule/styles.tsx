@@ -17,6 +17,11 @@ export const Day = styled.div<{ column: number }>`
   & > h4 {
     color: var(--white);
   }
+  @media screen and (max-width: 500px) {
+    height: 100%;
+    align-self: center;
+    grid-column: ${(props) => props.column + 3};
+  }
 `;
 
 export const Hour = styled.div<{
@@ -36,6 +41,9 @@ export const Hour = styled.div<{
     font-weight: 500;
     color: var(--gray-text);
   }
+  @media screen and (max-width: 500px) {
+    grid-column: ${(props) => props.column + 3};
+  }
 `;
 
 export const ScheduleDiv = styled.div`
@@ -48,6 +56,14 @@ export const ScheduleDiv = styled.div`
   }
   & > :last-child {
     margin-bottom: 0;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: var(--padding);
+    height: 100vh;
+    & > * {
+      margin-bottom: 0px;
+    }
   }
 `;
 
@@ -70,6 +86,18 @@ export const ScheduleView = styled.div<{ columns: number; rows: number }>`
       text-align: center;
     }
   }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(${(props) => props.columns + 1}, 1fr);
+    grid-gap: 5px;
+    & > div {
+      width: auto;
+      height: auto;
+      & > h4,
+      p {
+        font-size: 10px;
+      }
+    }
+  }
 `;
 
 export const Subject = styled.div<{ row: number }>`
@@ -80,5 +108,10 @@ export const Subject = styled.div<{ row: number }>`
   background: var(--white);
   & > h4 {
     color: var(--gray-text);
+  }
+  @media screen and (max-width: 500px) {
+    word-break: break-word;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 `;

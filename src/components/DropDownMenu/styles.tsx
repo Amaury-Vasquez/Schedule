@@ -5,6 +5,7 @@ import { fadeOut } from "../../styles/animation";
 export const DropDown = styled.div<{ active: boolean }>`
   position: relative;
   display: inline-block;
+  align-items: center;
   & > div {
     display: ${(props) => (props.active ? "block" : "none")};
   }
@@ -16,9 +17,14 @@ export const DropDown = styled.div<{ active: boolean }>`
   &:hover {
     display: block;
   }
+  @media screen and (max-width: 500px) {
+    & > svg {
+      font-size: 16px;
+    }
+  }
 `;
 
-export const DropDownContent = styled.div`
+export const DropDownContent = styled.div<{ pos?: number }>`
   /* margin-top: 2vh; */
   display: none;
   position: absolute;
@@ -32,5 +38,8 @@ export const DropDownContent = styled.div`
   z-index: 1;
   & > * {
     display: block;
+  }
+  @media screen and (max-width: 500px) {
+    right: ${(props) => (props.pos ? `${-100 + 20 * props.pos}px` : "-75px")};
   }
 `;

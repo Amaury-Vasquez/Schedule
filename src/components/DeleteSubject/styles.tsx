@@ -23,4 +23,8 @@ export const Delete = styled.div`
   & > :first-child {
     margin-bottom: 1vh;
   }
+  @media screen and (max-width: 500px) {
+    width: 300px;
+    height: 400px;
+  }
 `;
