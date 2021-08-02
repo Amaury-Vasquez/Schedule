@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SubjectValues } from "../interfaces";
 
 export const useSchedule = () => {
+  const [matchedSubjects, setMatched] = useState<SubjectValues[]>();
   const [subjects, setSubjects] = useState<SubjectValues[]>([
     {
       name: "Algebra Lineal",
@@ -43,5 +44,22 @@ export const useSchedule = () => {
   ]);
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-  return { setSubjects, subjects, weekdays };
+  const deleteSubject = (subject: SubjectValues) => {
+    const pos = subjects.findIndex((sbj) => sbj.name === subject.name);
+    if (pos !== undefined) {
+      const tmp = subjects.filter((sbj) => sbj.name !== subject.name);
+      setSubjects(() => tmp);
+    }
+  };
+  useEffect(() => {
+    setMatched(() => subjects);
+  }, [subjects]);
+  return {
+    deleteSubject,
+    matchedSubjects,
+    setMatched,
+    setSubjects,
+    subjects,
+    weekdays,
+  };
 };

@@ -1,15 +1,28 @@
+import { useContext, useMemo } from "react";
 import { AiOutlineClear, AiOutlineSearch } from "react-icons/ai";
 
-import { Search, Wrapper } from "./styles";
+import Context from "../../context";
+import { Button, Search, Wrapper } from "./styles";
 import { useSearch } from "../../hooks/useSearch";
 
-export const SearchBar = (props: { callback: Function }) => {
-  const { value, handleChange } = useSearch();
+export const SearchBar = () => {
+  const { setMatched, subjects } = useContext(Context);
+  const { filterSearch, handleChange, setValue, value } = useSearch(subjects);
+
   return (
-    <Wrapper>
-      <AiOutlineSearch />
+    <Wrapper
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (setMatched) setMatched(() => filterSearch);
+      }}
+    >
+      <Button type="submit">
+        <AiOutlineSearch />
+      </Button>
       <Search type="input" value={value} onChange={(e) => handleChange(e)} />
-      <AiOutlineClear />
+      <Button type="button" onClick={() => setValue("")}>
+        <AiOutlineClear />
+      </Button>
     </Wrapper>
   );
 };

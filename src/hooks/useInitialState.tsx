@@ -1,7 +1,8 @@
 import { useSchedule } from "../hooks/useSchedule";
 
 export const useInitialState = () => {
-  const { subjects, weekdays } = useSchedule();
+  const { deleteSubject, matchedSubjects, setMatched, subjects, weekdays } =
+    useSchedule();
 
-  return { subjects, weekdays };
+  return { deleteSubject, matchedSubjects, setMatched, subjects, weekdays };
 };
