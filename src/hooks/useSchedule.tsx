@@ -41,7 +41,7 @@ export const useSchedule = () => {
       teacher: "Botello Castillo Alejandro",
     },
   ]);
-  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const weekdays = ["M", "T", "W", "T", "F"];
 
   const deleteSubject = (subject: SubjectValues) => {
     const pos = subjects.findIndex((sbj) => sbj.name === subject.name);
