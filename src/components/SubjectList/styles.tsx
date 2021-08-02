@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
-  cursor: pointer;
-  & > svg {
-    fill: var(--loading-red);
-  }
-`;
+import { fadeIn } from "../../styles/animation";
 
 export const Item = styled.div`
+  ${fadeIn({ time: "2s" })};
   height: auto;
   width: 420px;
   display: flex;

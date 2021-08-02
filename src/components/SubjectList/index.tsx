@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { FaRegTrashAlt } from "react-icons/fa";
+import { useContext, useState } from "react";
 
+import { Delete } from "../Delete";
 import Context from "../../context";
-import { Button, Item, List, Subject } from "./styles";
+import { Item, List, Subject } from "./styles";
 
 export const SubjectList = () => {
   const { deleteSubject, matchedSubjects } = useContext(Context);
@@ -15,13 +15,11 @@ export const SubjectList = () => {
                 <h4> {sbj.name} </h4>
                 <h5> {sbj.teacher} </h5>
               </Subject>
-              <Button
-                onClick={() => {
+              <Delete
+                onConfirm={() => {
                   if (deleteSubject) deleteSubject(sbj);
                 }}
-              >
-                <FaRegTrashAlt />
-              </Button>
+              />
             </Item>
           ))
         : null}
