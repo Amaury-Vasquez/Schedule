@@ -5,6 +5,9 @@ export interface SubjectValues {
 }
 
 export interface ContextValues {
+  deleteSubject?: Function;
+  matchedSubjects?: Array<SubjectValues>;
+  setMatched?: Function;
   setSubjects?: Function;
   subjects?: Array<SubjectValues>;
   weekdays?: Array<string>;
