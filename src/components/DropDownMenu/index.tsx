@@ -1,24 +1,25 @@
-import { ElementType, useState } from "react";
+import { ElementType, useEffect, useState } from "react";
 
 import { DropDown, DropDownContent } from "./styles";
 
 export const DropDownMenu = (props: {
-  content?: ElementType;
-  cover: ElementType;
+  // banish: boolean;
   callback: Function;
+  Content?: ElementType;
+  Cover: ElementType;
 }) => {
   const [active, setActive] = useState<boolean>(false);
+  const { Content, Cover, callback } = props;
+
   return (
     <DropDown active={active}>
-      <props.cover
+      <Cover
         onClick={() => {
-          props.callback(setActive);
+          callback(setActive, active);
           setActive(!active);
         }}
       />
-      <DropDownContent>
-        {props.content ? <props.content /> : ""}
-      </DropDownContent>
+      <DropDownContent>{Content ? <Content /> : ""}</DropDownContent>
     </DropDown>
   );
 };

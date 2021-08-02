@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { fadeOut } from "../../styles/animation";
+
 export const DropDown = styled.div<{ active: boolean }>`
   position: relative;
   display: inline-block;
@@ -8,6 +10,7 @@ export const DropDown = styled.div<{ active: boolean }>`
   }
   & > svg {
     color: var(--loading-red);
+    cursor: pointer;
     font-size: 20px;
   }
   &:hover {
