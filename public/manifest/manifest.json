@@ -1,7 +1,7 @@
 {
-  "short_name": "React boilerplate",
-  "name": "React boilerplate created by Amaury Vasquez",
-  "description": "Boilerplate created to generate React and typescript projects",
+  "short_name": "Schedule making",
+  "name": "Schedule maker created by Amaury Vasquez",
+  "description": "PWA to view and edit your schedule",
   "icons": [
     {
       "src": "template.ico",
