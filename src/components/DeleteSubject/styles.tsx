@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Delete = styled.div`
   width: 500px;
-  height: 320px;
+  height: 500px;
   padding: var(--large-padding);
   overflow-y: scroll;
+  border-radius: var(--radius);
   &::-webkit-scrollbar-track {
     background: var(--gray);
     border-radius: 18px;
