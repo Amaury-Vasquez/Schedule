@@ -7,10 +7,9 @@ export const useSchedule = () => {
   const [subjects, setSubjects] = useState<SubjectValues[]>([
     {
       name: "Algebra Lineal",
-      hours: ["", "15:00 - 16:30", "15:00 - 16:30", "", "15:00 - 16:30"],
-      teacher: "",
+      hours: ["", "10:30-12:00", "10:30-12:00", "", "10:30-12:00"],
+      teacher: "Cañedo Suarez Leticia",
     },
-
     {
       name: "Calculo Aplicado",
       hours: ["08:30-10:00", "", "08:30-10:00", "08:30-10:00", ""],
@@ -33,8 +32,8 @@ export const useSchedule = () => {
     },
     {
       name: "Algoritmos y Estructuras de datos",
-      hours: ["", "15:00-16:30", "15:00-16:30", "", "15:00-16:30"],
-      teacher: "",
+      hours: ["", "7:00-8:30", "7:00-8:30", "", "7:00-8:30"],
+      teacher: "Suarez Castañon Miguel Santiago",
     },
     {
       name: "Bases de Datos",
