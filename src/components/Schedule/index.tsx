@@ -26,8 +26,8 @@ export const Schedule = () => {
   const fillSchedule = () => {
     return subjects.map((subject, i) => {
       return (
-        <Fragment key={subject.name + subject.teacher + i} >
-          <Subject key={subject.name + i} row={i}>
+        <Fragment key={subject.name + subject.teacher + i}>
+          <Subject row={i}>
             <h4> {subject.name} </h4>
           </Subject>
           {subject.hours.map((hour, j) => (
